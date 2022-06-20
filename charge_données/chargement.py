@@ -46,7 +46,7 @@ def lieux_csv_vers_bdd(ville, code_postal, chemin="mapmomes/données/Données_Ly
         if d["Lien Google Maps"]:
             essai = re.findall(e, d["Lien Google Maps"])
             if len(essai)==1:
-                d["lon"], d["lat"] = map(float, essai[0])
+                d["lat"], d["lon"] = map(float, essai[0]) # Dans GoogleMap c’est (lat, lon)
             else:
                 raise ValueError(f"pb dans la regexp pour trouver les coords dans le lien googleMaps : {d}")
 

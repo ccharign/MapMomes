@@ -35,12 +35,16 @@ def ajoute_des_many_to_many(table, ds_rel):
 class TypeLieu(models.Model):
     nom = models.TextField()
     description = models.TextField(null=True, blank=True, default=None)
+    def __str__(self):
+        return self.nom
 
     
 class Équipement(models.Model):
     nom = models.TextField()
     description = models.TextField(null=True, blank=True, default=None)
-    
+    def __str__(self):
+        return self.nom
+
     
 class Lieu(models.Model):
     """
@@ -59,8 +63,14 @@ class Lieu(models.Model):
     typeLieu = models.ManyToManyField(TypeLieu)
     équipement = models.ManyToManyField(Équipement)
 
+    def __str__(self):
+        return self.nom
+    
     def coords(self):
         return self.lon, self.lat
+
+    def __lt__(self, autre):
+        return True
 
     def autres_liens(self):
         return self.texte_autres_liens.split("|")

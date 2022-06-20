@@ -1,13 +1,9 @@
-Chargement des données
-   - Lieux
-   - Équipements
-
 
 Recherche:
-   - form avec type et équippement
-   - Sortie de type liste
    - Puis sortie carte avec popup.
-   - Puis lien avec itinéraire. Deuis position actuelle.
+       - lien
+       - formulaire avec itinéraire
+   - Puis lien avec itinéraire. Depuis position actuelle.
    
 
 

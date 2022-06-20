@@ -1,0 +1,16 @@
+{% extends "mapmomes/base.html" %}
+
+{% block contenu %}
+
+
+{% load bootstrap3 %}
+<form action="/recherche/" method="get">
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">C’est parti</button>
+    {% endbuttons %}
+</form>
+
+
+
+{% endblock contenu %}
